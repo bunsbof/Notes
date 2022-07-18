@@ -1,0 +1,1 @@
+1) [Lỗi phiên bản package ko tương thích với version php: php.ini thêm extension=""php_intl.dll]
