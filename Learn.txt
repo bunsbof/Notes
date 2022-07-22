@@ -1,0 +1,1 @@
+intval($request->input('draw'))
