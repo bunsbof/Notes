@@ -1,1 +1,179 @@
 intval($request->input('draw'))
+
+[
+Closure class:
+	Class used to represent anonymous functions.
+	Anonymous functions yield objects of this type. This class has methods that allow further control of the anonymous function after it has been created
+	Besides the methods listed here, this class also has an __invoke method. This is for consistency with other classes that implement "calling magic", as this method is not used for calling the function.
+	
+]
+
+[
+Anonymous function:
+	Also known as closures, allow the creation of functions which have no specified name. They are most useful as the value of callable parameters, but they have many other uses.
+	Anonymous functions are implemented using the Closure class.
+Example:
+<?php
+echo preg_replace_callback('~-([a-z])~', function ($match) {
+    return strtoupper($match[1]);
+}, 'hello-world');
+// outputs helloWorld
+?>
+
+Closures can also be used as the values of variables; PHP automatically converts such expressions into instances of the Closure internal class. Assigning a closure to a variable uses the same syntax as any other assignment, including the trailing semicolon:
+
+Example: Anonymous function variable assignment example
+
+<?php
+$greet = function($name)
+{
+    printf("Hello %s\r\n", $name);
+};
+
+$greet('World');
+$greet('PHP');
+?>
+
+Closures may also inherit variables from the parent scope. Any such variables must be passed to the use language construct. As of PHP 7.1, these variables must not include "superglobals", $this, or variables with the same name as a parameter. A return type declaration of the function has to be placed after the use clause.
+
+Example Inheriting vaiables from the parent scope
+
+<?php
+$message = 'hello';
+
+// No "use"
+$example = function () {
+    var_dump($message);
+};
+$example();
+
+// Inherit $message
+$example = function () use ($message) {
+    var_dump($message);
+};
+$example();
+
+// Inherited variable's value is from when the function
+// is defined, not when called
+$message = 'world';
+$example();
+
+// Reset message
+$message = 'hello';
+
+// Inherit by-reference
+$example = function () use (&$message) {
+    var_dump($message);
+};
+$example();
+
+// The changed value in the parent scope
+// is reflected inside the function call
+$message = 'world';
+$example();
+
+// Closures can also accept regular arguments
+$example = function ($arg) use ($message) {
+    var_dump($arg . ' ' . $message);
+};
+$example("hello");
+
+// Return type declaration comes after the use clause
+$example = function () use ($message): string {
+    return "hello $message";
+};
+var_dump($example());
+?>
+
+The above example will output something similar to:
+NULL
+string(5) "hello"
+string(5) "hello"
+string(5) "hello"
+string(5) "world"
+string(11) "hello world"
+string(11) "hello world"
+
+As of PHP 8.0.0, the list of scope-inherited variables may include a trailing comma, which will be ignored.
+Inheriting variables from the parent scope is not the same as using global variables. Global variables exist in the global scope, which is the same no matter what function is executing. The parent scope of a closure is the function in which the closure was declared (not necessarily the function it was called from). See the following example:
+
+Example Closures and scoping
+
+<?php
+// A basic shopping cart which contains a list of added products
+// and the quantity of each product. Includes a method which
+// calculates the total price of the items in the cart using a
+// closure as a callback.
+class Cart
+{
+    const PRICE_BUTTER  = 1.00;
+    const PRICE_MILK    = 3.00;
+    const PRICE_EGGS    = 6.95;
+
+    protected $products = array();
+    
+    public function add($product, $quantity)
+    {
+        $this->products[$product] = $quantity;
+    }
+    
+    public function getQuantity($product)
+    {
+        return isset($this->products[$product]) ? $this->products[$product] :
+               FALSE;
+    }
+    
+    public function getTotal($tax)
+    {
+        $total = 0.00;
+        
+        $callback =
+            function ($quantity, $product) use ($tax, &$total)
+            {
+                $pricePerItem = constant(__CLASS__ . "::PRICE_" .
+                    strtoupper($product));
+                $total += ($pricePerItem * $quantity) * ($tax + 1.0);
+            };
+        
+        array_walk($this->products, $callback);
+        return round($total, 2);
+    }
+}
+
+$my_cart = new Cart;
+
+// Add some items to the cart
+$my_cart->add('butter', 1);
+$my_cart->add('milk', 3);
+$my_cart->add('eggs', 6);
+
+// Print the total with a 5% sales tax.
+print $my_cart->getTotal(0.05) . "\n";
+// The result is 54.29
+?>
+
+Example Automatic binding of $this
+<?php
+
+class Test
+{
+    public function testing()
+    {
+        return function() {
+            var_dump($this);
+        };
+    }
+}
+
+$object = new Test;
+$function = $object->testing();
+$function();
+    
+?>
+//Output
+object(Test)#1 (0) {
+}
+
+
+
+]
