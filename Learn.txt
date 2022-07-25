@@ -10,6 +10,9 @@ Closure class:
 
 [
 Anonymous function:
+
+When use anonymous function have to notice the scope (if the scope is outta the array_map function it will never be called)
+
 	Also known as closures, allow the creation of functions which have no specified name. They are most useful as the value of callable parameters, but they have many other uses.
 	Anonymous functions are implemented using the Closure class.
 Example:
