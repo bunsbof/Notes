@@ -10,6 +10,245 @@ Closure class:
 
 [
 Anonymous function:
+
+When use anonymous function have to notice the scope (if the scope is outta the array_map function it will never be called)
+
+public function index()
+    {
+        $take = 8;
+
+        $arr = [
+            0 => [
+                "id" => 1,
+                "name" => "Điện thoại"
+            ],
+            1 => [
+                "id" => 3,
+                "name" => "Phụ kiện di động"
+            ],
+            2 => [
+                "id" => 73,
+                "name" => "Tablet"
+            ],
+            3 => [
+                "id" => 74,
+                "name" => "Smartwatch"
+            ],
+            4 => [
+                "id" => 78,
+                "name" => "Điện thoại cũ"
+            ],
+            5 => [
+                "id" => 80,
+                "name" => "Tablet cũ"
+            ],
+            6 => [
+                "id" => 81,
+                "name" => "Smartwatch cũ"
+            ]
+        ];
+        $categorys = array_map(function ($item) use ($take) {
+            $child_arr = [
+                0 => [
+                    "id" => 68,
+                    "name" => "Iphone"
+                ],
+                1 => [
+                    "id" => 69,
+                    "name" => "samsung"
+                ],
+                2 => [
+                    "id" => 70,
+                    "name" => "Xiaomi"
+                ],
+                3 => [
+                    "id" => 71,
+                    "name" => "Oppo"
+                ]
+            ];
+            $child_arr = array_map(function ($childCategory) use ($take) {
+                $products = [
+                    0 => [
+                        "id" => 292,
+                        "categoryId" => 1,
+                        "categoryIdLv2" => "68",
+                        "name" => "iPhone X 64GB",
+                        "SKU" => "ipX",
+                        "images" => null,
+                        "technicalPrice" => null,
+                        "price" => 7500000.0,
+                        "promotionPrice" => 6500000,
+                        "quantity" => 20,
+                        "sold" => 0,
+                        "created_at" => "2022-05-11 18:23:18",
+                        "updated_at" => "2022-07-21 22:26:10",
+                        "meta_desc" => "iPhone X tại TStore - Đà lạt - Lâm Đồng",
+                        "meta_keywords" => "iPhone X, iPhone X Đà Lạt, iPhone X Lâm Đồng, iPhone, iPhone Đà Lạt, iPhone Lâm Đồng, Đà Lạt, Lâm Đồng",
+                        "title" => "iPhone X 64GB",
+                        "meta_title" => "iPhone X tại TStore - Đà lạt - Lâm Đồng",
+                        "brandId" => 1,
+                        "status" => 1
+                    ],
+                    1 => [
+                        "id" => 293,
+                        "categoryId" => 1,
+                        "categoryIdLv2" => "68",
+                        "name" => "iPhone Xs 64GB",
+                        "SKU" => "ipXs",
+                        "images" => null,
+                        "technicalPrice" => 6200000,
+                        "price" => 8500000.0,
+                        "promotionPrice" => 7500000,
+                        "quantity" => 20,
+                        "sold" => 0,
+                        "created_at" => "2022-05-11 18:51:46",
+                        "updated_at" => "2022-05-11 18:51:46",
+                        "meta_desc" => "iPhone Xs tại TStore - Đà lạt - Lâm Đồng",
+                        "meta_keywords" => "iPhone Xs, iPhone Xs Đà Lạt, iPhone Xs Lâm Đồng, iPhone, iPhone Đà Lạt, iPhone Lâm Đồng, Đà Lạt, Lâm Đồng",
+                        "title" => "iPhone Xs 64GB",
+                        "meta_title" => "iPhone Xs tại TStore - Đà lạt - Lâm Đồng",
+                        "brandId" => 1,
+                        "status" => 1
+                    ],
+                    2 => [
+                        "id" => 294,
+                        "categoryId" => 1,
+                        "categoryIdLv2" => "68",
+                        "name" => "iPhone 11 ProMax",
+                        "SKU" => "ip11pm",
+                        "images" => null,
+                        "technicalPrice" => 14200000,
+                        "price" => 17500000.0,
+                        "promotionPrice" => 16500000,
+                        "quantity" => 20,
+                        "sold" => 0,
+                        "created_at" => "2022-05-11 18:57:08",
+                        "updated_at" => "2022-05-11 18:57:08",
+                        "meta_desc" => "iPhone 11 ProMax tại TStore - Đà lạt - Lâm Đồng",
+                        "meta_keywords" => "iPhone 11 ProMax, iPhone 11 ProMax Đà Lạt, iPhone 11 ProMax Lâm Đồng, iPhone, iPhone Đà Lạt, iPhone Lâm Đồng, Đà Lạt, Lâm Đồng",
+                        "title" => "iPhone 11 ProMax",
+                        "meta_title" => "iPhone 11 ProMax tại TStore - Đà lạt - Lâm Đồng",
+                        "brandId" => 1,
+                        "status" => 1
+                    ],
+                    3 => [
+                        "id" => 295,
+                        "categoryId" => 1,
+                        "categoryIdLv2" => "68",
+                        "name" => "iPhone 12 ProMax",
+                        "SKU" => "ip12pm",
+                        "images" => null,
+                        "technicalPrice" => 19000000,
+                        "price" => 24500000.0,
+                        "promotionPrice" => 22500000,
+                        "quantity" => 20,
+                        "sold" => 0,
+                        "created_at" => "2022-05-11 19:03:21",
+                        "updated_at" => "2022-05-11 19:04:00",
+                        "meta_desc" => "iPhone 12 ProMax  tại TStore - Đà lạt - Lâm Đồng",
+                        "meta_keywords" => "iPhone 12 ProMax, iPhone 12 ProMax Đà Lạt, iPhone 12 ProMax Lâm Đồng, iPhone, iPhone Đà Lạt, iPhone Lâm Đồng, Đà Lạt, Lâm Đồng",
+                        "title" => "iPhone 12 ProMax",
+                        "meta_title" => "iPhone 12 ProMax  tại TStore - Đà lạt - Lâm Đồng",
+                        "brandId" => 1,
+                        "status" => 1
+                    ],
+                    4 => [
+                        "id" => 296,
+                        "categoryId" => 1,
+                        "categoryIdLv2" => "68",
+                        "name" => "iPhone 13 ProMax",
+                        "SKU" => "ip13pm",
+                        "images" => null,
+                        "technicalPrice" => 2900000,
+                        "price" => 31000000.0,
+                        "promotionPrice" => 30000000,
+                        "quantity" => 20,
+                        "sold" => 0,
+                        "created_at" => "2022-05-11 19:20:14",
+                        "updated_at" => "2022-07-22 22:32:12",
+                        "meta_desc" => "iPhone 13 ProMax  tại TStore - Đà lạt - Lâm Đồng",
+                        "meta_keywords" => "iPhone 13 ProMax, iPhone 13 ProMax Đà Lạt, iPhone 13 ProMax Lâm Đồng, iPhone, iPhone Đà Lạt, iPhone Lâm Đồng, Đà Lạt, Lâm Đồng",
+                        "title" => "iPhone 13 ProMax",
+                        "meta_title" => "iPhone 13 ProMax  tại TStore - Đà lạt - Lâm Đồng",
+                        "brandId" => 1,
+                        "status" => 1
+                    ],
+                    5 => [
+                        "id" => 297,
+                        "categoryId" => 1,
+                        "categoryIdLv2" => "68",
+                        "name" => "1231",
+                        "SKU" => "123",
+                        "images" => null,
+                        "technicalPrice" => 12345678,
+                        "price" => 123457000.0,
+                        "promotionPrice" => 123456,
+                        "quantity" => 20,
+                        "sold" => 0,
+                        "created_at" => "2022-07-21 22:22:37",
+                        "updated_at" => "2022-07-22 22:32:13",
+                        "meta_desc" => "132",
+                        "meta_keywords" => "123",
+                        "title" => "123",
+                        "meta_title" => "123",
+                        "brandId" => 1,
+                        "status" => 1
+                    ],
+                    6 => [
+                        "id" => 298,
+                        "categoryId" => 1,
+                        "categoryIdLv2" => "68",
+                        "name" => "1231",
+                        "SKU" => "123",
+                        "images" => null,
+                        "technicalPrice" => 12345678,
+                        "price" => 123457000.0,
+                        "promotionPrice" => 123456,
+                        "quantity" => 20,
+                        "sold" => 0,
+                        "created_at" => "2022-07-21 22:23:07",
+                        "updated_at" => "2022-07-21 22:23:07",
+                        "meta_desc" => "132",
+                        "meta_keywords" => "123",
+                        "title" => "123",
+                        "meta_title" => "123",
+                        "brandId" => 1,
+                        "status" => 1
+                    ],
+                    7 => [
+                        "id" => 301,
+                        "categoryId" => 1,
+                        "categoryIdLv2" => "68",
+                        "name" => "1231",
+                        "SKU" => "123",
+                        "images" => null,
+                        "technicalPrice" => 12345678,
+                        "price" => 123457000.0,
+                        "promotionPrice" => 123456,
+                        "quantity" => 20,
+                        "sold" => 0,
+                        "created_at" => "2022-07-21 22:24:43",
+                        "updated_at" => "2022-07-21 22:24:43",
+                        "meta_desc" => "132",
+                        "meta_keywords" => "123",
+                        "title" => "123",
+                        "meta_title" => "123",
+                        "brandId" => 1,
+                        "status" => 1
+                    ]
+                ];
+                $childCategory["products"] = $products;
+                //print_r($childCategory["products"]);
+                //var_dump($childCategory["products"]);
+                return $childCategory;
+            }, $child_arr);
+            //print_r($child_arr);
+            $item["childrentCategory"] = $child_arr;
+            return $item;
+        }, $arr);
+        dd($categorys);
+    }
+
 	Also known as closures, allow the creation of functions which have no specified name. They are most useful as the value of callable parameters, but they have many other uses.
 	Anonymous functions are implemented using the Closure class.
 Example:
