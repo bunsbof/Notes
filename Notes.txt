@@ -1,1 +1,3 @@
 1) [Lỗi phiên bản package ko tương thích với version php: php.ini thêm extension=""php_intl.dll]
+
+2) [Package export excel lỗi: thêm sau câu lệnh cài excel --ignore-platform-reqs trong terminal]
