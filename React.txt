@@ -63,3 +63,10 @@ package.js:
 
 npm install --legacy-peer-deps
 
+[
+Don't touch the DOM. I'll do it
+Build websites like lego blocks
+Unidirectional data flow
+UI, The rest is up to you
+]
+
