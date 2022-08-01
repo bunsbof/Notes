@@ -63,3 +63,8 @@ package.js:
 
 npm install --legacy-peer-deps
 
+Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+npm install --global --production npm-windows-upgrade
+npm-windows-upgrade --npm-version latest
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
