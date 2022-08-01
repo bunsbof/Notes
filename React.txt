@@ -63,8 +63,16 @@ package.js:
 
 npm install --legacy-peer-deps
 
-Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+
+[
+Don't touch the DOM. I'll do it
+Build websites like lego blocks
+Unidirectional data flow
+UI, The rest is up to you
+]
+
+[Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 npm install --global --production npm-windows-upgrade
 npm-windows-upgrade --npm-version latest
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force]
 

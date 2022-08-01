@@ -50,3 +50,10 @@ Example: Intuition told her that he had spoken the truth.
 		*[countable] intuition(that...) an idea or a strong feeling that something is true although you cannot explain why
 Example: I had a intuition that something awful was about to happen.
 ]
+
+[imperative (adj): very important and needing immediate attention or action
+Example: Imperative(that...): It is absolutely imperative that we finish by next week.
+	 Imperative(to do something) It is imperative to continue the treatment for at least two months
+Expessing authority: an imperative tone
+Only before noun: expressing an order: an imperative sentence
+]
