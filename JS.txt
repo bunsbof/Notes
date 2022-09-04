@@ -9,4 +9,10 @@ function myCalculator(num1, num2, myCallback) {
 }
 
 myCalculator(5, 5, myDisplayer);
+
+When you pass a function as an argument, remember not to use parenthesis.
+
+Right: setTimeout(myFunction, 3000);
+
+Wrong: setTimeout(myFunction(), 3000);
 ]
