@@ -120,6 +120,7 @@ Example: tepid tea
 	 She stood under the tepid shower.
 ]
 
+[omit: ]
 
 
 
