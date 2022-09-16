@@ -1,3 +1,9 @@
 1) [Lỗi phiên bản package ko tương thích với version php: php.ini thêm extension=""php_intl.dll]
 
 2) [Package export excel lỗi: thêm sau câu lệnh cài excel --ignore-platform-reqs trong terminal]
+
+3) [Hooks: 
+	only use hooks inside of function component, cannot use it in class component (bc class have their own way to does the same thing as hooks does
+	must execute as a same order (dont put it in if else or something like that]
+
+4) [useState: return with two values, first is a variable and second thing is a function used to update the variable]
