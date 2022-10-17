@@ -70,3 +70,13 @@ npm install --global --production npm-windows-upgrade
 npm-windows-upgrade --npm-version latest
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 
+[useEffect: useEffect(callback, [deps])
+
+useEffect(callback): call callback everytime component is re-rendered
+	call callback after the component rendered element and add into DOM
+useEffect(callback, [])
+useEffect(callback, [deps])
+callback: progressing the side effect which mean Update DOM, Call API, Listen DOM events (scroll, resize), Cleanup(remove listener / unsubscribe, Clear timer)
+the [deps] (optional): 
+]
+

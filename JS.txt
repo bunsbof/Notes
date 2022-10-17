@@ -31,7 +31,33 @@ function myFunction() {
 }
 ]
 
-Maps are Objects
+[
+Spread: if you have an array or object and you want the other array or object element get inside of the needed array, just put ...theNameOfArray just like this. The spread will conclude the other array into the needed array.
+var object1 = {name: 'Javascript'}; var object2 = {price: 1000};
+var object3 = { ...object1, ...object2};
 
+if 2 array or object all of them got a key that are the same js gonna overwrite with the second key of the configered array or object
 
+var defaultConfig = {
+	api: 'https://facebook.com',
+	apiVersion: 'v1',
+	other: 'other',
+};
+
+var exerciseConfig = {
+	...defaultConfig,
+	api: 'https://facebook.com/bunsbof
+};
+
+Rest: if you too lazy to write down all the array or object elements just use the ...namedParameter then all of them will get inside the algorithm
+function([a,b,...namedParameter]) {
+	console.log(namedParameter);
+}
+]
+
+[
+Destructuring: same as object
+var arr = ['Javascript', 'PHP', 'Ruby']
+var [a, b, c] = arr;
+var [a, ...rest] = arr;
 ]
