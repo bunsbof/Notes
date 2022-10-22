@@ -1,3 +1,18 @@
+The Component Lifecycle
+Higher-Order Components
+React State and setState()
+React Context
+ReactJS Introduction to JSX
+ReactJS Rendering Elements
+ReactJS Components
+ReactJS Props
+ReactJS State in React
+ReactJS Lifecycle of Components
+ReactJS Conditional Rendering
+ReactJS Lists
+ReactJS Keys
+ReactJS forms
+
 npm create vite@latest
 npx create-react-app ./
 
