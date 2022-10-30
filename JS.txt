@@ -42,6 +42,15 @@ Partial Applications, Currying, Compose and Pipe
 Clean Code
 
 
+
+[
+Closure: Là một hàm có thể ghi nhớ nơi nó được tạo và truy cập được biến ở bên ngoài phạm vi của nó
+Util: Viết code ngắn gọn hơn
+	Biểu diễn, ứng dụng tính private trong oop
+Notes:
+	Biến được tham chiếu (refer) trong closure sẽ không được xóa khỏi bộ nhớ khi hàm cha thực thi xong
+]
+
 [
 function myDisplayer(something) {
   document.getElementById("demo").innerHTML = something;
