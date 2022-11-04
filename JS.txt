@@ -42,6 +42,28 @@ Partial Applications, Currying, Compose and Pipe
 Clean Code
 
 
+Iterations:	Intimately associated with Arrays is iterating through them using loops. In JS, we can use five different control structures for iterations. The most customizable is the for loop, which we can use to iterate through array indexes in almost any order. If the number of iterations cannot be determined, we can use while and do while loops until a certain condition is met. FOr any object, we can use the for in and for of loops to iterate through its keys and values, respectively. To get both simultaneously, we can loop through its entries(). We can also break out of a loop at any time using a break statement, or skip ahead to the next iteration using continue statement. For the most control, iterating through generator functions is the best.
+		Native array methods that iterate through all its items are: indexOf, lastIndexOf, includes, fill, and join. Additionally, we can provide a callback function to the following methods: findIndex, find, filter, forEach, map, some, every, and reduce.
+
+Recursions: 	any iterative function can be reproduced with a recursive one, and vice versa. Sometimes, a recursive approach is cleaner, cleaner, and more elegant. example:
+	const factorial = number => {
+		let product = 1;
+		for (let i = 2; i <= number; i++) {
+			product *=i;
+		}
+		return product;
+	}
+	Expressed as a recursive function, only one line of code is needed
+	const factorial = number => number < 2 ? 1: number * factorial(number - 1)
+		All recursive functions share a common pattern. They are made from creating a recursive part that calls itself, and a base case that does not. Whenever a function calls itself, it pushes a new execution context to the execution stack. This continues until the base case is met, the the stack unwinds as contexts are popped off one by one. For this reason, careless dependence on recursion can lead to the dreaded stack overflow runtime error
+
+Algorithms: String Reversal, Palindrome, Integer Reversal, Fizz Buzz, Max Character, Anagrams, Vowels, Array Chunking, Reverse Array, Reverse Words, Capitalization, Caesar Cipher, Ransom Note, Mean; Median; and Mode, Two Sum, Max Profit, Sieve of Eratosthenes, Fibonacci, Memoized Fibonacci, Staircase, Pyramid, Matrix Spiral, Data Structure Algorithms,
+
+
+
+
+
+
 
 [
 Closure: Là một hàm có thể ghi nhớ nơi nó được tạo và truy cập được biến ở bên ngoài phạm vi của nó
