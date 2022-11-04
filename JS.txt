@@ -41,6 +41,8 @@ Design Patterns
 Partial Applications, Currying, Compose and Pipe
 Clean Code
 
+Console. , debug :	log, error, warn, time, timeEnd, dir, table, assert
+			debugger
 
 Iterations:	Intimately associated with Arrays is iterating through them using loops. In JS, we can use five different control structures for iterations. The most customizable is the for loop, which we can use to iterate through array indexes in almost any order. If the number of iterations cannot be determined, we can use while and do while loops until a certain condition is met. FOr any object, we can use the for in and for of loops to iterate through its keys and values, respectively. To get both simultaneously, we can loop through its entries(). We can also break out of a loop at any time using a break statement, or skip ahead to the next iteration using continue statement. For the most control, iterating through generator functions is the best.
 		Native array methods that iterate through all its items are: indexOf, lastIndexOf, includes, fill, and join. Additionally, we can provide a callback function to the following methods: findIndex, find, filter, forEach, map, some, every, and reduce.
