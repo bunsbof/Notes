@@ -62,7 +62,28 @@ Recursions: 	any iterative function can be reproduced with a recursive one, and 
 Algorithms: String Reversal, Palindrome, Integer Reversal, Fizz Buzz, Max Character, Anagrams, Vowels, Array Chunking, Reverse Array, Reverse Words, Capitalization, Caesar Cipher, Ransom Note, Mean; Median; and Mode, Two Sum, Max Profit, Sieve of Eratosthenes, Fibonacci, Memoized Fibonacci, Staircase, Pyramid, Matrix Spiral, Data Structure Algorithms,
 
 
+Code: 	[
+	Ex1: plus minus
+		const arr = [-4, 3, -9, 0, 4, 1]
+		let text = "";
+		const hold = arr.reduce((acc, val, idx) => {
+		  val > 0 ? pos++ : val < 0 ? neg++ : val === 0 ? zero++ : "test"
+		  return [pos, neg, zero]
+		}, [])
 
+		hold.forEach((val, idx) => {
+		  text += (hold[idx]/arr.length).toFixed(6) + "\n"
+		})
+		
+	Ex2: Counting the occurrences
+		result = info.reduce((acc, val) => {
+		    return { ...acc, [val.name]: (acc[val.name] || 0) + 1 };
+		  }, {});
+		result = info.reduce(
+		    (acc, val) => ((acc[val.name] = (acc[val.name] || 0) + 1), acc),
+		    {}
+		  );
+]
 
 
 
